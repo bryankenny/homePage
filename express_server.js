@@ -28,6 +28,10 @@ app.get('/', function (req, res) {
   res.render('index.ejs', sayHello())
 });
 
+app.get('/urls/new', function(req, res) {
+  res.render('new_url.ejs')
+})
+
 app.get('/prac', function(req, res) {
 
 });
