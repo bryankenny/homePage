@@ -4,7 +4,7 @@ const app = express();
 const PORT = 8080; // default port 8080
 
 let path = require('path')
-
+const bodyParser = require("body-parser");
 
 // website dummy data
 let webSiteDB = {
@@ -21,6 +21,8 @@ function sayHello() {
 }
 
 app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
