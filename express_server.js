@@ -14,11 +14,23 @@ let webSiteDB = {
   "4chan": "http://www.4chan.org"
 }
 
+let sites = [
+  "http://www.google.com",
+  "http://www.lighthouselabs.ca",
+  "http://www.reddit.com",
+  "http://www.4chan.org"
+]
+
 // functions
 
 function sayHello() {
   console.log("hello")
 }
+
+// function getURL() {
+//   let newURL = req.body.longURL
+//   console.log(newURL)
+// }
 
 app.set('view engine', 'ejs');
 
@@ -35,11 +47,18 @@ app.get('/urls/new', function(req, res) {
 })
 
 app.get('/prac', function(req, res) {
-
+  res.render('index.ejs')
 });
 
 app.get("/sites.json", (req, res) => {
   res.json(webSiteDB);
+});
+
+app.post("/prac", (req, res) => {
+  // console.log(req.body);
+  let newURL = req.body.longURL
+  console.log(newURL)
+  res.send("Ok");         // Respond with 'Ok' (we will replace this)
 });
 
 app.listen(PORT, () => {
