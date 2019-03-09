@@ -21,6 +21,8 @@ let sites = [
   "http://www.4chan.org"
 ]
 
+var sitesArrObj = [];
+
 // functions
 
 function sayHello() {
@@ -40,6 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) {
   res.render('index.ejs', sayHello())
+  console.log(sitesArrObj);
 });
 
 app.get('/urls/new', function(req, res) {
@@ -51,14 +54,14 @@ app.get('/prac', function(req, res) {
 });
 
 app.get("/sites.json", (req, res) => {
-  res.json(webSiteDB);
+  res.json(sitesArrObj);
 });
 
 app.post("/prac", (req, res) => {
-  // console.log(req.body);
   let newURL = req.body.longURL
-  console.log(newURL)
-  res.send("Ok");         // Respond with 'Ok' (we will replace this)
+  sitesArrObj.push(newURL);
+  console.log(sitesArrObj);
+  res.send("Ok");
 });
 
 app.listen(PORT, () => {
