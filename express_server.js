@@ -42,7 +42,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) {
   res.render('index.ejs', sayHello())
-  console.log(sitesArrObj);
 });
 
 app.get('/urls/new', function(req, res) {
@@ -61,7 +60,7 @@ app.post("/prac", (req, res) => {
   let newURL = req.body.longURL
   sitesArrObj.push(newURL);
   console.log(sitesArrObj);
-  res.send("Ok");
+  res.redirect("/");
 });
 
 app.listen(PORT, () => {
