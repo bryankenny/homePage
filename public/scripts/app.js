@@ -25,7 +25,7 @@ let sites = [
   "http://www.4chan.org"
 ]
 
-var sitesArrObj = [];
+const sitesArrObj = [];
 
 // functions
 
@@ -41,14 +41,6 @@ function sayHello() {
 //     appendChildElement.innerHTML = site.url
 //   }
 // }
-
-// <div>
-//     <ul>
-//       <% for (var i=0; i<sitesArrObj.length; i++) { %>
-//         <li><%= sitesArrObj[i] %></li>
-//       <% }; %>
-//     </ul>
-//   </div>
 
 // routes
 
