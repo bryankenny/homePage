@@ -11,19 +11,6 @@ let path = require('path')
 const bodyParser = require("body-parser");
 
 // website dummy data
-let webSiteDB = {
-  "Google": "http://www.google.com",
-  "Lighthouse Labs": "http://www.lighthouselabs.ca",
-  "Reddit": "http://www.reddit.com",
-  "4chan": "http://www.4chan.org"
-}
-
-let sites = [
-  "http://www.google.com",
-  "http://www.lighthouselabs.ca",
-  "http://www.reddit.com",
-  "http://www.4chan.org"
-]
 
 var sitesArrObj = [];
 
@@ -33,22 +20,11 @@ function sayHello() {
   console.log("hello")
 }
 
-// function listSites() {
-//   var parentElement = document.getElementById('siteList');
-//   for (let site of sitesArrObj) {
-//     childElement = document.createElement('div');
-//     appendChildElement = parentElement.appendChild(childElement)
-//     appendChildElement.innerHTML = site.url
-//   }
-// }
-
-// <div>
-//     <ul>
-//       <% for (var i=0; i<sitesArrObj.length; i++) { %>
-//         <li><%= sitesArrObj[i] %></li>
-//       <% }; %>
-//     </ul>
-//   </div>
+function showSites(array) {
+  for (var i=0; i<array.length; i++) {
+    console.log("banana")
+  }
+}
 
 // routes
 
@@ -67,7 +43,7 @@ app.get('/urls/new', function(req, res) {
 })
 
 app.get('/prac', function(req, res) {
-  res.render('index.ejs')
+  res.render('index.ejs', showSites(sitesArrObj))
 });
 
 app.get("/sites.json", (req, res) => {
