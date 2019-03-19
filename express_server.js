@@ -3,16 +3,12 @@ const express = require("express");
 const app = express();
 const PORT = 8080; // default port 8080
 
-const childElement = '';
-const appendChildElement = '';
-const parentElement = '';
-
 let path = require('path')
 const bodyParser = require("body-parser");
 
 // website dummy data
 
-var sitesArrObj = [];
+let sitesArrObj = [];
 
 // functions
 
@@ -22,19 +18,22 @@ function sayHello() {
 
 function showSites(array) {
   for (var i=0; i<array.length; i++) {
-    console.log("banana")
+    console.log(array[i])
   }
+  return array[i];
 }
 
 // routes
 
 app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views')
 
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) {
+  var test = "this is a test";
   res.render('index.ejs', sayHello())
 });
 
