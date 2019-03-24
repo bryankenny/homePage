@@ -6,6 +6,8 @@ const PORT = 8080; // default port 8080
 let path = require('path')
 const bodyParser = require("body-parser");
 
+app.locals.myVar = "bryan is cool";
+
 // website dummy data
 
 let sitesArrObj = [];
