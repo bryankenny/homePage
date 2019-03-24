@@ -10,7 +10,7 @@ app.locals.myVar = "bryan is cool";
 
 // website dummy data
 
-let sitesArrObj = [];
+app.locals.sitesArrObj = [];
 
 // functions
 
@@ -44,7 +44,7 @@ app.get('/urls/new', function(req, res) {
 
 app.get('/prac', function(req, res) {
   // res.render('index.ejs', showSites(sitesArrObj))
-  res.send(sitesArrObj);
+  res.send(app.locals.sitesArrObj);
 });
 
 app.get("/sites.json", (req, res) => {
@@ -53,8 +53,7 @@ app.get("/sites.json", (req, res) => {
 
 app.post("/", (req, res) => {
   let newURL = req.body.longURL
-  sitesArrObj.push(newURL);
-  console.log(sitesArrObj);
+  app.locals.sitesArrObj.push(newURL);
   res.redirect("/");
 });
 
