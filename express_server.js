@@ -26,11 +26,10 @@ function showSites(array) {
 // routes
 
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views')
+app.set('views', path.join(__dirname + '/views'));
+app.use(express.static(path.join(__dirname + '/public')));
 
 app.use(bodyParser.urlencoded({extended: true}));
-
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) {
   var test = "this is a test";
@@ -42,7 +41,8 @@ app.get('/urls/new', function(req, res) {
 })
 
 app.get('/prac', function(req, res) {
-  res.render('index.ejs', showSites(sitesArrObj))
+  // res.render('index.ejs', showSites(sitesArrObj))
+  res.send(sitesArrObj);
 });
 
 app.get("/sites.json", (req, res) => {
