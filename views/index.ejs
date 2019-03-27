@@ -17,13 +17,6 @@
 </head>
 <body>
   <% include partials/_header %>
-  <script>
-    $(document).ready(function(){
-      $("#testButt").click(function() {
-        alert( "Handler for .click() called." );
-      });
-    });
-</script>
 
 <%  function showSites(array) { %>
 <%    for (var i=0; i<array.length; i++) { %>
@@ -32,11 +25,11 @@
 <% } %>
 
 <%= showSites(sitesArrObj); %>
-  <div>
-    <button id="testButt"></button>
-  </div>
-  <DIV id="siteList">
-    <ul id="listSite"></ul>
-  </DIV>
+
+<ul>
+  <% sitesArrObj.forEach((item) => { %>
+    <li><%= item %></li>
+  <% }); %>
+</ul>
 </body>
 </html>
