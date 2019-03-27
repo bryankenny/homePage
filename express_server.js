@@ -1,22 +1,23 @@
 // global variables
+
 const express = require("express");
 const app = express();
 const PORT = 8080; // default port 8080
 
-let path = require('path')
+const path = require('path')
 const bodyParser = require("body-parser");
 
-app.locals.myVar = "bryan is cool";
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname + '/views'));
+app.use(express.static(path.join(__dirname + '/public')));
 
-// website dummy data
+app.use(bodyParser.urlencoded({extended: true}));
+
+// Array added sites will live in
 
 app.locals.sitesArrObj = [];
 
 // functions
-
-function sayHello() {
-  console.log("hello")
-}
 
 function showSites(array) {
   for (var i=0; i<array.length; i++) {
@@ -27,15 +28,9 @@ function showSites(array) {
 
 // routes
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname + '/views'));
-app.use(express.static(path.join(__dirname + '/public')));
-
-app.use(bodyParser.urlencoded({extended: true}));
-
 app.get('/', function (req, res) {
   var test = "this is a test";
-  res.render('index.ejs', sayHello())
+  res.render('index.ejs')
 });
 
 app.get('/urls/new', function(req, res) {

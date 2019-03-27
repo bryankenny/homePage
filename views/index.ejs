@@ -19,15 +19,24 @@
   <% include partials/_header %>
   <script>
     $(document).ready(function(){
-    $("#testButt").click(function() {
-     alert( "Handler for .click() called." );
-  });
- });
+      $("#testButt").click(function() {
+        alert( "Handler for .click() called." );
+      });
+    });
 </script>
-<%= console.log(sitesArrObj); %>
+
+<%  function showSites(array) { %>
+<%    for (var i=0; i<array.length; i++) { %>
+<%=      console.log(array[i]) %>
+<%    } %>
+<% } %>
+
+<%= showSites(sitesArrObj); %>
   <div>
     <button id="testButt"></button>
   </div>
-
+  <DIV id="siteList">
+    <ul id="listSite"></ul>
+  </DIV>
 </body>
 </html>
