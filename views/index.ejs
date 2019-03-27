@@ -18,18 +18,19 @@
 <body>
   <% include partials/_header %>
 
-<%  function showSites(array) { %>
-<%    for (var i=0; i<array.length; i++) { %>
-<%=      console.log(array[i]) %>
-<%    } %>
-<% } %>
+  <%  function showSites(array) { %>
+  <%    for (var i=0; i<array.length; i++) { %>
+  <%=      console.log(array[i]) %>
+  <%    } %>
+  <% } %>
 
-<%= showSites(sitesArrObj); %>
+  <%= showSites(sitesArrObj); %>
 
 <ul>
   <% sitesArrObj.forEach((item) => { %>
     <li><%= item %></li>
   <% }); %>
 </ul>
+
 </body>
 </html>
