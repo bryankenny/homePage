@@ -19,18 +19,13 @@
   <% include partials/_header %>
 
   <%  function showSites(array) { %>
-  <%    for (var i=0; i<array.length; i++) { %>
-  <%=      console.log(array[i]) %>
-  <%    } %>
+    <ul>
+      <% array.forEach((item) => { %>
+        <a href="item"><li><%= item %></li></a>
+      <% }); %>
+    </ul>
   <% } %>
 
   <%= showSites(sitesArrObj); %>
-
-<ul>
-  <% sitesArrObj.forEach((item) => { %>
-    <a href="item"><li><%= item %></li></a>
-  <% }); %>
-</ul>
-
 </body>
 </html>

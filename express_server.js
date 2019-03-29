@@ -17,15 +17,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.locals.sitesArrObj = [];
 
-// functions
-
-function showSites(array) {
-  for (var i=0; i<array.length; i++) {
-    console.log(array[i])
-  }
-  return array[i];
-}
-
 // routes
 
 app.get('/', function (req, res) {
