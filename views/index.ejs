@@ -13,11 +13,13 @@
   <!-- App CSS -->
   <link rel="stylesheet" type="text/css" href="/styles/navbar.css">
   <link rel="stylesheet" type="text/css" href="/styles/index.css">
+  <link rel="stylesheet" type="text/css" href="/styles/card.css">
 
 </head>
 <body>
   <% include partials/_header %>
-
+<div class="card">
+<div class="container">
   <%  function showSites(array) { %>
     <ul>
       <% array.forEach((item) => { %>
@@ -28,6 +30,8 @@
       <% }); %>
     </ul>
   <% } %>
+</div>
+</div>
 
   <%= showSites(sitesArrObj); %>
 </body>
