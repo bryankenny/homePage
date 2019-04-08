@@ -17,3 +17,7 @@ button {
   list-style-type: circle;
   color: black;
 }
+
+#listItem:hover {
+  color: #333333;
+}
