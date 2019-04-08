@@ -7,6 +7,8 @@ h1 {
 p {
   color: red;
 }
-#list {
-
+#unorderedList {
+  list-style-type: circle;
+}
+#listItem {
 }

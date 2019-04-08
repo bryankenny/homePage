@@ -19,10 +19,10 @@
   <% include partials/_header %>
 
   <%  function showSites(array) { %>
-    <ul id="list">
+    <ul id="unorderedList">
       <% array.forEach((item) => { %>
         <a href="<%= item %>">
-          <li><%= item %></li>
+          <li id="listItem"><%= item %></li>
         </a>
         <button>Delete URL <img src="https://image.flaticon.com/icons/svg/0/39.svg" width="20" height="22"></button>
       <% }); %>
