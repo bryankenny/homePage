@@ -1,17 +1,19 @@
 body {
-  background-color: powderblue;
+  background-color: beige;
 }
 h1 {
   color: blue;
 }
-p {
-  color: red;
+button {
+
 }
 #listItem {
   font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  background: #cce5ff;
 }
 
 #unorderedList {
   list-style-type: circle;
+  color: black;
 }
