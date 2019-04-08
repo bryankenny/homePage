@@ -7,8 +7,11 @@ h1 {
 p {
   color: red;
 }
+#listItem {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
 #unorderedList {
   list-style-type: circle;
-}
-#listItem {
 }
