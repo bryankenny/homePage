@@ -18,10 +18,9 @@
 </head>
 <body>
   <% include partials/_header %>
-<div class="card">
-<div class="container">
+
   <%  function showSites(array) { %>
-    <ul>
+    <ul id="list">
       <% array.forEach((item) => { %>
         <a href="<%= item %>">
           <li><%= item %></li>
@@ -30,8 +29,6 @@
       <% }); %>
     </ul>
   <% } %>
-</div>
-</div>
 
   <%= showSites(sitesArrObj); %>
 </body>
