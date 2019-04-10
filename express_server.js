@@ -7,6 +7,8 @@ const PORT = 8080; // default port 8080
 const path = require('path')
 const bodyParser = require("body-parser");
 
+const db = require('./queries');
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname + '/views'));
 app.use(express.static(path.join(__dirname + '/public')));
@@ -23,6 +25,8 @@ app.get('/', function (req, res) {
   var test = "this is a test";
   res.render('index.ejs')
 });
+
+app.get('/users', db.getUsers)
 
 app.get('/urls/new', function(req, res) {
   res.render('new_url.ejs')
