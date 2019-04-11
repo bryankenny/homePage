@@ -26,7 +26,8 @@ app.get('/', function (req, res) {
   res.render('index.ejs')
 });
 
-app.get('/users', db.getUsers)
+app.get('/users', db.getUsers);
+app.get('/users/:id', db.getUserById);
 
 app.get('/urls/new', function(req, res) {
   res.render('new_url.ejs')
@@ -46,6 +47,8 @@ app.post("/", (req, res) => {
   app.locals.sitesArrObj.push(newURL);
   res.redirect("/");
 });
+
+app.post('/users', db.createUser)
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}!`);
