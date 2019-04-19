@@ -22,9 +22,16 @@ app.locals.sitesArrObj = [];
 // routes
 
 app.get('/', function (req, res) {
-  var test = "this is a test";
   res.render('index.ejs')
 });
+
+app.get('/register', function(req, res) {
+  res.render('register.ejs')
+})
+
+app.get('/login', function(req, res) {
+  res.render('login.ejs')
+})
 
 app.get('/users', db.getUsers);
 app.get('/users/:id', db.getUserById);
