@@ -14,5 +14,18 @@
 </head>
 <body>
   <% include partials/_header %>
+   <form action="/register" method="POST">
+      <table style="margin:30px;">
+        <tr style="height:60px;">
+          <td style="font-family:cursive;"><label for="name">Name:</label></td>
+          <td style="width:250px;"><input id="name" name="name" type="name" style="width:200px;"></td>
+        </tr>
+        <tr>
+          <td style="font-family:cursive;"><label for="email">Email:</label></td>
+          <td><input id="email" name="email" type="email" style="width:200px;"></td>
+        </tr>
+      </table>
+      <button style="margin-left: 277px;">Register  <img src="https://cdn0.iconfinder.com/data/icons/cosmetic-store/25/Register-512.png" width="20" height="20"></button>
+     </form>
 </body>
 </html>
